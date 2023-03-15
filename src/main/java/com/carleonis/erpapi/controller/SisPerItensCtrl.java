@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.carleonis.erpapi.service.SisPerItensServ;
 import com.carleonis.erpapi.model.dto.ImpSisPerItens;
@@ -22,6 +23,7 @@ import com.carleonis.erpapi.model.dto.mapper.SisPerItensMapper;
 
 @RestController
 @RequestMapping("/sisPerItens")
+@CrossOrigin(origins="*")
 public class SisPerItensCtrl {
 
     @Autowired

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.carleonis.erpapi.service.SisSegurServ;
 import com.carleonis.erpapi.model.dto.ImpSisSegur;
@@ -22,6 +23,7 @@ import com.carleonis.erpapi.model.dto.mapper.SisSegurMapper;
 
 @RestController
 @RequestMapping("/sissegur")
+@CrossOrigin(origins="*")
 public class SisSegurCtrl {
 
     @Autowired

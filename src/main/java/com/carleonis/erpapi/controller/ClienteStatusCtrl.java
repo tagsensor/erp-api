@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.carleonis.erpapi.service.ClienteStatusService;
 import com.carleonis.erpapi.model.dto.ClienteStDTOimput;
@@ -22,7 +23,8 @@ import com.carleonis.erpapi.model.dto.mapper.ClienteStatusMapper;
 
 @RestController
 @RequestMapping("/clienteStatus")
-public class ClienteStatusController {
+@CrossOrigin(origins="*")
+public class ClienteStatusCtrl {
 
     @Autowired
     private ClienteStatusService clienteStatusService;

@@ -9,7 +9,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import lombok.var;
 
@@ -26,7 +25,6 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
 			.anyRequest().authenticated()
 			.and()
 			.oauth2ResourceServer().jwt();
-
 			//.oauth2ResourceServer().opaqueToken();
 		
 	}

@@ -67,7 +67,6 @@
 			<scope>test</scope>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
@@ -77,14 +76,7 @@
 			<artifactId>oauth2-oidc-sdk</artifactId>
 			<version>6.21.2</version>
 		</dependency>
-		
-		<!-- para resolver problema de cors -->
-		<dependency>
-  			<groupId>org.springframework.boot</groupId>
-  			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		
-		
+
 	</dependencies>
 
 	<build>
