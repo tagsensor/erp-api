@@ -1,7 +1,9 @@
 package com.carleonis.erpapi.model.dto;
 
+import java.util.List;
 
 import com.carleonis.erpapi.model.*;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,5 +18,7 @@ public class OutMenu {
     private String nomeIcone;
 
     private boolean visivel;
-
+    
+    private List<MenuItens> subMenu;
+    
 }

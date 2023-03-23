@@ -24,6 +24,11 @@ public class SisPerItensServ {
     public List<SisPerItens> listar() {
         return sisPerItensRepo.findAll();
     }
+    
+    public SisPerItens buscarPagina(int id, Long idPerfil ) {
+        return sisPerItensRepo.findByIdSubAndPerfilId(id, idPerfil).orElseThrow(() -> new AcessoDadosVazioException("Página não encontrada"));
+    }
+    
     public SisPerItens buscar(Long id) {
         return sisPerItensRepo.findById(id).orElseThrow(() -> new AcessoDadosVazioException("SisPerItens não encontrado"));
     }

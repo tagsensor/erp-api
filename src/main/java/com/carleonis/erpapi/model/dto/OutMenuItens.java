@@ -14,15 +14,7 @@ public class OutMenuItens {
     private Menu idMenu;
 
     private String nome;
-
-    private String pagina;
-
-    private String descricao;
-
-    private int versao;
-
-    private String pagNovo;
-
-    private String paginaHtml;
+    
+    private boolean visivel;
 
 }

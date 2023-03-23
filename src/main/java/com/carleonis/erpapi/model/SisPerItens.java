@@ -25,10 +25,7 @@ public class SisPerItens {
 
     @ManyToOne
     @JoinColumn(name = "id_perfil")
-    private SisPerfil idPerfil;
-
-    @Column(name = "id_chave")
-    private int idChave;
+    private SisPerfil perfil;
 
     private String pagina;
 

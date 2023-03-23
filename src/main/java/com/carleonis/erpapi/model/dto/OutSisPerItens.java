@@ -11,9 +11,7 @@ public class OutSisPerItens {
 
     private Long id;
 
-    private SisPerfil idPerfil;
-
-    private int idChave;
+    private SisPerfil perfil;
 
     private String pagina;
 
