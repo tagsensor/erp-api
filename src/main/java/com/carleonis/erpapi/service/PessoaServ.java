@@ -12,26 +12,38 @@ import org.springframework.orm.jpa.JpaObjectRetrievalFailureException;
 import com.carleonis.erpapi.service.exception.AcessoDadosVazioException;
 import com.carleonis.erpapi.service.exception.ViolacaoIntegridadeException;
 import com.carleonis.erpapi.service.exception.DadosInvalidosException;
-import com.carleonis.erpapi.repository.ClienteRepository;
-import com.carleonis.erpapi.model.Cliente;
+import com.carleonis.erpapi.repository.PessoaRepo;
+import com.carleonis.erpapi.model.Pessoa;
 
 @Service
-public class ClienteService {
+public class PessoaServ {
 
     @Autowired
-    private ClienteRepository clienteRepository;
-
-    public List<Cliente> listar() {
-        return clienteRepository.findAll();
+    private PessoaRepo pessoaRepo;
+    
+    public Pessoa buscarNomeCpf(String nomeCpf) {
+        return pessoaRepo.findByNomeCpf(nomeCpf).orElseThrow(() -> new AcessoDadosVazioException("Pessoa não encontrado"));
     }
-    public Cliente buscar(Long id) {
-        return clienteRepository.findById(id).orElseThrow(() -> new AcessoDadosVazioException("Cliente não encontrado"));
+    
+    public List<Pessoa> clientelike(String like) {
+        return pessoaRepo.findByNomeCpfContainingAndCliente(like, true);
+    }
+    
+    public List<Pessoa> fornecedorlike(String like) {
+        return pessoaRepo.findByNomeCpfContainingAndFornecedor(like, true);
+    }
+
+    public List<Pessoa> listar() {
+        return pessoaRepo.findAll();
+    }
+    public Pessoa buscar(Long id) {
+        return pessoaRepo.findById(id).orElseThrow(() -> new AcessoDadosVazioException("Pessoa não encontrado"));
     }
 
     @Transactional
-    public Cliente adicionar(Cliente cliente) {
+    public Pessoa adicionar(Pessoa pessoa) {
         try {
-            return clienteRepository.save(cliente);
+            return pessoaRepo.save(pessoa);
         } catch (DataIntegrityViolationException e) {
             throw new ViolacaoIntegridadeException("Erro de Integridade");
         } catch (JpaObjectRetrievalFailureException e) {
@@ -40,10 +52,10 @@ public class ClienteService {
     }
 
     @Transactional
-    public Cliente alterar(Cliente cliente) {
-        clienteRepository.findById(cliente.getId()).orElseThrow(() -> new AcessoDadosVazioException("Cliente não encontrado"));
+    public Pessoa alterar(Pessoa pessoa) {
+        pessoaRepo.findById(pessoa.getId()).orElseThrow(() -> new AcessoDadosVazioException("Pessoa não encontrado"));
         try {
-            return clienteRepository.save(cliente);
+            return pessoaRepo.save(pessoa);
         } catch (DataIntegrityViolationException e) {
             throw new ViolacaoIntegridadeException("Erro de Integridade");
         } catch (JpaObjectRetrievalFailureException e) {
@@ -54,8 +66,8 @@ public class ClienteService {
     @Transactional
     public void deletar(Long id) {
         try {
-            clienteRepository.deleteById(id);
-            clienteRepository.flush();
+            pessoaRepo.deleteById(id);
+            pessoaRepo.flush();
         } catch (EmptyResultDataAccessException e) {
             throw new AcessoDadosVazioException(
                 String.format("Não existe Entidade com id %d", id));

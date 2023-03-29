@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    show-sql: 'true'
+  datasources:
+    -
+      name: default
+      url: jdbc:mysql://162.144.233.234:3306/default?zeroDateTimeBehavior=convertToNull
+      username: sag01
+      password: PYAZ89ew
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    -
+      name: oficina
+      url: jdbc:mysql://162.144.233.234:3306/oficina?zeroDateTimeBehavior=convertToNull
+      username: sag01
+      password: PYAZ89ew
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    -
+      name: pospuc
+      url: jdbc:mysql://162.144.233.234:3306/pospuc?zeroDateTimeBehavior=convertToNull
+      username: sag01
+      password: PYAZ89ew
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      
+server:
+  servlet:
+    context-path: /v1
