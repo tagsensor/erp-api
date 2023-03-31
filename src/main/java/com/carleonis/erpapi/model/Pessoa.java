@@ -31,10 +31,6 @@ public class Pessoa {
 
     private boolean fornecedor;
 
-    private boolean funcionario;
-
-    private boolean comissionado;
-
     private int versao;
 
     @Column(name = "nome_cpf")
@@ -62,58 +58,6 @@ public class Pessoa {
 
     private int id_segur;
 
-    private boolean proprietario;
-
-    private String matricula;
-
-    private String nome_abrev;
-
-    private int id_situacao;
-
-    private LocalDate dt_nascimento;
-
-    private String nome_pai;
-
-    private String nome_mae;
-
-    private int id_est_civil;
-
-    private String sexo;
-
-    private String nacionalidade;
-
-    private String local_nascimento;
-
-    private String doc_rg;
-
-    private String doc_ctps;
-
-    private String doc_pis_pasep;
-
-    private String doc_tit_eleitoral;
-
-    private String doc_cert_reservista;
-
-    private String doc_cnh;
-
-    private String doc_cat_cnh;
-
-    private LocalDate dt_venc_cnh;
-
-    private boolean contabilidade;
-
-    private boolean motorista;
-
-    private int id_rh_form;
-
-    private String rh_prof;
-
-    private String rh_prof_cbo;
-
-    private int id_tipo_dest;
-
-    private boolean paf;
-
-    private boolean paf1;
+    private BigDecimal credito_pg;
 
 }

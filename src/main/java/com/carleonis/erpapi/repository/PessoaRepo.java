@@ -16,5 +16,7 @@ public interface PessoaRepo extends JpaRepository<Pessoa, Long> {
 	List<Pessoa> findByNomeCpfContainingAndFornecedor(String nomeCpf, boolean fornecedor);
 	
 	Optional<Pessoa> findByNomeCpf(String nomeCpf);
+	
+	Optional<Pessoa> findByCpf(String cpf);
 
 }
