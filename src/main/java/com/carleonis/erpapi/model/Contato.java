@@ -26,7 +26,7 @@ public class Contato {
 
     @ManyToOne
     @JoinColumn(name = "id_tipo_fone")
-    private TipoFone auxTipoFone;
+    private TipoFone tipoFone;
 
     @ManyToOne
     @JoinColumn(name = "id_pessoa")
