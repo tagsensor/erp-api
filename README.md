@@ -1,2 +1,2 @@
 # erp-api
-Novo erp com api em spring boot
+Trabalho de conclusão de curso de pós graduação em engenharia de software pela PUC MG
